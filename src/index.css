@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: "Barlow Condensed", sans-serif;
+    --font-sans: "Plus Jakarta Sans", sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+  }
+
+  html,
+  body {
+    overscroll-behavior: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #0b111b;
+    color: #f1f5f9;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  button,
+  [role="button"] {
+    touch-action: manipulation;
+  }
+
+  html.theme-light body {
+    background-color: #eef3f9;
+    color: #0f172a;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Global Light Mode semantic surface & contrast overrides */
+html.theme-light .bg-\[\#0B111B\],
+html.theme-light .bg-\[\#0B111B\]\/95,
+html.theme-light .bg-\[\#0B111B\]\/92,
+html.theme-light .bg-\[\#0B111B\]\/90 {
+  background-color: rgba(248, 250, 252, 0.94) !important;
+  color: #0f172a;
+}
+
+html.theme-light .bg-\[\#131C2B\],
+html.theme-light .bg-\[\#131C2B\]\/92,
+html.theme-light .bg-\[\#182336\],
+html.theme-light .bg-\[\#060910\] {
+  background-color: rgba(255, 255, 255, 0.96) !important;
+  color: #0f172a;
+}
+
+html.theme-light .bg-slate-900,
+html.theme-light .bg-slate-900\/90,
+html.theme-light .bg-slate-900\/70,
+html.theme-light .bg-slate-900\/50 {
+  background-color: #e2e8f0 !important;
+}
+
+html.theme-light .bg-slate-800 {
+  background-color: #cbd5e1 !important;
+}
+
+html.theme-light .border-slate-800,
+html.theme-light .border-slate-800\/90,
+html.theme-light .border-slate-800\/80,
+html.theme-light .border-slate-700,
+html.theme-light .border-slate-700\/80 {
+  border-color: #cbd5e1 !important;
+}
+
+html.theme-light .text-white,
+html.theme-light .text-slate-100,
+html.theme-light .text-slate-200 {
+  color: #0f172a !important;
+}
+
+html.theme-light .text-slate-300 {
+  color: #334155 !important;
+}
+
+html.theme-light .text-slate-400 {
+  color: #475569 !important;
+}
+
+html.theme-light .text-amber-300,
+html.theme-light .text-amber-400 {
+  color: #b45309 !important;
+}
+
+html.theme-light .text-emerald-300,
+html.theme-light .text-emerald-400 {
+  color: #047857 !important;
+}
+
+html.theme-light .text-sky-300,
+html.theme-light .text-sky-400 {
+  color: #0369a1 !important;
+}
+
+html.theme-light .bg-amber-500,
+html.theme-light .bg-amber-500 *,
+html.theme-light .bg-sky-400,
+html.theme-light .bg-sky-400 *,
+html.theme-light .bg-emerald-500,
+html.theme-light .bg-emerald-500 * {
+  color: #0f172a !important;
+}
+
+/* Keep hero overlay text readable over disaster photos in light mode */
+html.theme-light .hero-photo-overlay .text-white,
+html.theme-light .hero-photo-overlay .text-slate-200,
+html.theme-light .hero-photo-overlay .text-slate-300 {
+  color: #f8fafc !important;
+}
+
+/* Subtle tactical grid motion respectful of reduced motion */
+@keyframes hazard-breathe {
+  0%,
+  100% {
+    opacity: 0.72;
+  }
+  50% {
+    opacity: 0.94;
+  }
+}
+
+.animate-hazard {
+  animation: hazard-breathe 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hazard {
+    animation: none;
+  }
+}

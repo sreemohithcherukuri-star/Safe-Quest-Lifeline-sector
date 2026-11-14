@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix Lifeline Sector",
+  "description": "A tactical disaster escape and rescue simulation where you scavenge critical supplies, outrun advancing natural disasters, and make high-stakes choices about saving stranded survivors.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
